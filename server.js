@@ -11,10 +11,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Ensure data directory exists
+// Ensure data directory exists (gracefully catch read-only filesystem errors in cloud/serverless environments)
 const dataDir = path.join(__dirname, 'data');
 if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir);
+  try {
+    fs.mkdirSync(dataDir);
+  } catch (err) {
+    console.warn('Warning: Could not create data directory (likely read-only environment):', err.message);
+  }
 }
 
 // Serve index.html as the root index page from public directory
@@ -150,10 +154,16 @@ app.post('/api/acquire', (req, res) => {
   }
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`=========================================`);
-  console.log(`  SHUDDODAKA SACRED WATER BACKEND ACTIVE`);
-  console.log(`  Listening at: http://localhost:${PORT}`);
-  console.log(`=========================================`);
-});
+// Start the server only if running locally (not on Vercel serverless functions)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`=========================================`);
+    console.log(`  SHUDDODAKA SACRED WATER BACKEND ACTIVE`);
+    console.log(`  Listening at: http://localhost:${PORT}`);
+    console.log(`=========================================`);
+  });
+}
+
+// Export Express app for Vercel serverless handler
+module.exports = app;
+
