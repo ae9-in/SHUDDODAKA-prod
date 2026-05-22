@@ -21,13 +21,13 @@ if (!fs.existsSync(dataDir)) {
   }
 }
 
-// Serve index.html as the root index page from public directory
+// Serve index.html as the root index page from root directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-// Serve the public directory static files
-app.use(express.static(path.join(__dirname, '..', 'public')));
+// Serve the root directory static files
+app.use(express.static(path.join(__dirname, '..')));
 
 // Health check endpoint
 app.get('/api/status', (req, res) => {
