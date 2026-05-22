@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shuddodaka - Sacred Water</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/style.css"/>
+</head>
+<body class="bg-bg-void text-on-surface font-body-lg selection:bg-saffron-sacred/30 selection:text-white-pure antialiased overflow-x-hidden">
+<!-- Mystic Loader -->
+<div id="mystic-loader" class="fixed inset-0 z-[100] bg-bg-void flex flex-col items-center justify-center" style="transition: opacity 1200ms cubic-bezier(0.25, 1, 0.5, 1), transform 1200ms cubic-bezier(0.25, 1, 0.5, 1);">
+<div class="relative flex items-center justify-center mb-8">
+<div class="w-24 h-24 border border-dashed border-gold-pure/30 rounded-full animate-[spin_20s_linear_infinite] absolute"></div>
+<div class="w-16 h-16 bg-gradient-to-r from-gold-pure/20 to-saffron-sacred/20 rounded-full animate-ping absolute opacity-40" style="animation-duration: 3s;"></div>
+<div class="w-12 h-12 rounded-full bg-gradient-to-b from-gold-shimmer to-saffron-sacred flex items-center justify-center shadow-[0_0_30px_rgba(232,131,58,0.4)] z-10 animate-pulse" style="animation-duration: 2s;">
+<span class="material-symbols-outlined text-bg-void select-none" style="font-size: 24px; font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-gold-pure tracking-[0.25em] uppercase text-glow animate-pulse" style="animation-duration: 2s;">Shuddodaka</h2>
+<p class="font-label-caps text-on-surface-variant/40 mt-2 uppercase tracking-[0.15em] text-[10px]">Divine Purity Aligned</p>
+</div>
+</div>
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-bg-void/40 backdrop-blur-xl border-b border-saffron-sacred/10 shadow-[inset_0_1px_0_0_rgba(232,131,58,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-page py-4 max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md text-gold-pure tracking-widest uppercase">Shuddodaka</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline-sm text-headline-sm md:font-label-caps md:text-label-caps uppercase text-gold-shimmer border-b border-gold-pure pb-1 Active: scale-95 transition-transform hover:bg-gold-pure/10 transition-all duration-500 px-2 rounded-sm" href="#essence">Essence</a>
+<a class="font-headline-sm text-headline-sm md:font-label-caps md:text-label-caps uppercase text-on-surface-variant hover:text-gold-pure transition-colors duration-300 hover:bg-gold-pure/10 transition-all duration-500 px-2 rounded-sm py-1" href="#ritual">Ritual</a>
+<a class="font-headline-sm text-headline-sm md:font-label-caps md:text-label-caps uppercase text-on-surface-variant hover:text-gold-pure transition-colors duration-300 hover:bg-gold-pure/10 transition-all duration-500 px-2 rounded-sm py-1" href="#source">Source</a>
+<a class="font-headline-sm text-headline-sm md:font-label-caps md:text-label-caps uppercase text-on-surface-variant hover:text-gold-pure transition-colors duration-300 hover:bg-gold-pure/10 transition-all duration-500 px-2 rounded-sm py-1" href="#legacy">Legacy</a>
+</div>
+<button id="nav-acquire-btn" class="hidden md:block px-6 py-3 border border-gold-pure text-gold-pure font-label-caps uppercase tracking-widest hover:bg-gradient-to-r hover:from-gold-pure/20 hover:to-saffron-sacred/20 transition-all duration-500 rounded-sm">
+            Acquire Now
+        </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-gold-pure">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-20 overflow-hidden bg-bg-void" style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uiMq6hnaKIHPVakTuyy-QXSvo8hZtK2vm0BmH1e5ZIRlammlYbRFa282M44fK1zmLVi69P2JO1Kqt2QkT8JUxLPl5gjZeZC7qi5D-x0-g6cVzPDkYBI3fAcXstX-fw2dz2N9DQaA1GT5GrYjxxSD9HyW3pnTnpw5ExHzXCTlowsM0-MLDMQknTo0RTweEP_b0Axx5G_kwmeh9-5I9HJ5g7VdrSZgSHsf1FNj1jD6xSqzPkJzG06V5LlGvQ'); background-size: cover; background-position: center; background-attachment: fixed;">
+<div class="absolute inset-0 bg-gradient-to-b from-bg-void/40 via-transparent to-bg-void/80 z-0"></div>
+<div id="particles-js"><canvas height="1024" width="1280"></canvas><canvas height="1024" width="1280"></canvas></div>
+<div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-margin-page max-w-4xl mx-auto mt-12 md:mt-0">
+<div class="relative flex items-center justify-center mb-16 md:mb-24 w-full max-w-lg mx-auto">
+<!-- Left Element: Neem Leaves -->
+<div class="absolute left-0 bottom-4 md:left-4 md:bottom-12 z-20 opacity-0 animate-fade-up" style="animation-delay: 0.8s;">
+    <div class="animate-float">
+        <div class="hover:scale-110 hover:rotate-6 transition-transform duration-700 cursor-pointer">
+            <img alt="Sacred Neem Leaves" class="w-16 md:w-28 h-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] rotate-[-10deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRgYlbomCDt2hKU_74hUd0CshmwqBhSpe3H54xcI7UjOVOWDGDU8YkjZB8OqYjMazgCrdyLzJ3tn558ODOBMljqaH9U7Qg4UZazq0PAps0XUQ5o2hwTl6schk1ewqkGC8wSzDypYoHEPnhMBWfSBE9UsSVxG9VNFgypSjE3aqWBxLnSEJCfF8E8ZbYRL6Kb_NEfs2OJEnZRaSYWF0AjLXZv-ajhBDNw10Y-pAz23te333BQrnUjMqNoojiDtlDnNEvbKfv2DiLOMw"/>
+        </div>
+    </div>
+</div>
+<!-- Central Product bottle -->
+<div class="animate-float">
+<img alt="Shuddodaka Sacred Water Bottle" class="h-64 md:h-[500px] w-auto object-contain drop-shadow-[0_0_60px_rgba(117,191,255,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6IN0JaC4fLIhzq1EGmz_BGm-aO7eMh-8aCo7uM50XEIdDQpaY9GoRQhNcq_B2rukHTbF_Jq8dQf4aFrd0G3ERcZBM2PxMapwFcPn47kkvOexMyXkiH6fmL8CloCoy8lN_pgyfiOUvEWox_KVtsQ88IsSG8kkGNvrnPq3iyrdUrY6piZ4EBcH6Pm4gAiEV1oKINN9xpK-BGPgHzq4V4zPuDyAKOTcxaXXR9or-Dk1QidqgZDtTg3M1kCRkbWy3ZqE2l8DwpZmGl1w"/>
+</div>
+<!-- Right Element: Camphor Cube -->
+<div class="absolute right-0 bottom-4 md:right-4 md:bottom-12 z-20 opacity-0 animate-fade-up" style="animation-delay: 1s;">
+    <div class="animate-float" style="animation-delay: 0.5s;">
+        <div class="hover:scale-110 hover:-rotate-6 transition-transform duration-700 cursor-pointer">
+            <img alt="Sacred Camphor" class="w-12 md:w-20 h-auto object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.3)] filter sepia-[0.1] rotate-[15deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPPNDrRnfcD4b4R5VvP2Tc49cVIQIlkzn86zH4FNDCgblftJZwcYQPJJ1h-lNWh0FVoKhCAkhzCtk2UtLmI4LiW27wyJrzp4BaTVsaui7d47fq9ihMM5POdCXc2-gZRpfHKXvlvXbf-wpAIPza8ZhaXEaUKZhQ42BULPb6OWdMc_qLoutY-mG5Wbu89PVkRfD-5_QlJoPMu23I0jFR2R_47F5aT_RDfe-rAwoPN2RavfOd6Q-vw_N071wLaqEl0ZD6zHxe5MD1QYk"/>
+        </div>
+    </div>
+</div>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-white-pure mb-2 text-glow opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
+
+            SHUDDODAKA
+        </h1>
+<p class="font-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto opacity-0 animate-fade-up" style="animation-delay: 0.4s;">
+            Sacred Water. Divine Purity. Ancient Ritual.
+        </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 opacity-0 animate-fade-up w-full" style="animation-delay: 0.6s;">
+<button id="hero-purify-btn" class="w-full md:w-auto px-8 border border-gold-pure text-gold-pure font-label-caps uppercase tracking-widest hover:bg-gradient-to-r hover:from-gold-pure/20 hover:to-saffron-sacred/20 transition-all duration-500 rounded-sm bg-transparent leading-none flex items-center justify-center h-14">
+                Purify Your Space
+            </button>
+<button class="w-full md:w-auto px-8 border border-white-pure/20 text-white-pure font-label-caps uppercase tracking-widest hover:border-white-pure hover:bg-white-pure/10 transition-all duration-500 rounded-sm bg-transparent leading-none flex items-center justify-center h-14 relative group">
+                Learn the Ritual
+                <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-white-pure transition-all duration-300 group-hover:w-1/2"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Marquee -->
+<div class="w-full bg-surface-container-high py-4 overflow-hidden border-y border-saffron-sacred/20 flex items-center shadow-lg">
+<div class="flex whitespace-nowrap animate-scroll space-x-16 px-8 items-center text-gold-pure/60 font-label-caps tracking-widest uppercase">
+<span class="">SACRED PURITY</span> • <span class="">VEDIC RITUALS</span> • <span class="">DIVINE ESSENCE</span> • <span class="">ANCIENT WISDOM</span> • <span class="">UNTOUCHED WATERS</span> • 
+        <span class="">SACRED PURITY</span> • <span class="">VEDIC RITUALS</span> • <span class="">DIVINE ESSENCE</span> • <span class="">ANCIENT WISDOM</span> • <span class="">UNTOUCHED WATERS</span>
+</div>
+</div>
+<!-- Brand Story (Sacred Story) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-page max-w-[1440px] mx-auto bg-bg-void relative" id="essence">
+<!-- Subtle Diya Glow Overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(232,131,58,0.08),_transparent_70%)] pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
+<div class="md:col-span-7 reveal-on-scroll pr-0 md:pr-12 visible">
+<span class="text-saffron-sacred font-label-caps uppercase tracking-widest mb-4 block">The Origin</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-white-pure mb-8">Born from the River of Ages</h2>
+<div class="space-y-6 font-body-lg text-on-surface-variant">
+<p class="">
+                    Before time, before the shaping of temples, there was the water. Shuddodaka is not merely gathered; it is reverently received from the deepest, most pristine aquifers beneath the ancient lands.
+                </p>
+<p class="">
+                    Every drop undergoes a rigorous physical purification process that honors its sacred nature, culminating in energetic alignment through Vedic mantras. It is the bridge between the physical and the divine.
+                </p>
+</div>
+</div>
+<div class="md:col-span-5 reveal-on-scroll mt-12 md:mt-0 relative visible">
+<div class="aspect-[4/5] bg-surface-container rounded-sm overflow-hidden relative group border border-saffron-sacred/10 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-bg-void via-transparent to-transparent z-10"></div>
+<img alt="Shuddodaka Water Bottle" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90" src="origin-story.png"/>
+</div>
+<!-- Decorative Element - Warm Tone -->
+<div class="absolute -bottom-8 -left-8 w-32 h-32 border-l border-b border-saffron-sacred/30"></div>
+</div>
+</div>
+</section>
+<!-- The Golden Thread -->
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-page">
+<div class="golden-thread opacity-30"></div>
+</div>
+<!-- Three Pillars -->
+<section class="py-section-gap px-margin-mobile md:px-margin-page max-w-[1440px] mx-auto relative bg-bg-deep overflow-hidden">
+<!-- Crimson to Black theme influence -->
+<div class="absolute inset-0 bg-gradient-to-b from-bg-void via-surface-container-low/40 to-bg-void opacity-50 pointer-events-none"></div>
+<!-- Subtle noise texture overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<div class="text-center mb-24 reveal-on-scroll relative z-10 visible">
+<h2 class="font-display-lg-mobile md:font-display-lg text-white-pure">The Trinity of Purity</h2>
+<div class="w-24 h-1 bg-saffron-sacred/40 mx-auto mt-6 rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+<!-- Pillar 1 -->
+<div class="sacred-glass p-10 rounded-sm flex flex-col items-center text-center reveal-on-scroll group hover:bg-surface-variant transition-colors duration-500 border border-saffron-sacred/10 visible">
+<div class="w-24 h-24 mb-8 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+<img alt="Vedic Purity" class="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(232,131,58,0.5)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0GiTuF18twymRYEeEyCXl2mzC6dgg7Z8WC1UVm1bRJZ3Gy2PChipDA9vBsQe8ud9-h1kjmDDuY-jQiRNYVcxES7Tq5ti_NRCMCmiFdsKM8dKSYBic3GPEFeAykBfUvw8cEXcrI1mfo7cyvZuGX7aJHSGj-rKUSsl9cyZPVbycwj7U5Bq0R-CvmlAcXffqz1J7-Scf3kuwKdJs_0SAeAS3nW5y_wL6uDtV7gF2SHuDvgsKD83pR-jl-sT_grXNwyshnihD88nspU0"/>
+</div>
+<h3 class="font-headline-sm text-gold-pure mb-4">Vedic Extraction</h3>
+<p class="font-body-md text-on-surface-variant">Sourced only during auspicious astrological windows, ensuring the water's highest energetic resonance.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="sacred-glass p-10 rounded-sm flex flex-col items-center text-center reveal-on-scroll group hover:bg-surface-variant transition-colors duration-500 border border-saffron-sacred/10 visible" style="transition-delay: 100ms;">
+<div class="w-24 h-24 mb-8 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+<img alt="Ritual Potency" class="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(232,131,58,0.5)]" src="mantra-infusion.png"/>
+</div>
+<h3 class="font-headline-sm text-gold-pure mb-4">Mantra Infusion</h3>
+<p class="font-body-md text-on-surface-variant">Held in copper vats while resonating with continuous Vedic chanting to restructure the water memory.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="sacred-glass p-10 rounded-sm flex flex-col items-center text-center reveal-on-scroll group hover:bg-surface-variant transition-colors duration-500 border border-saffron-sacred/10 visible" style="transition-delay: 200ms;">
+<div class="w-24 h-24 mb-8 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+<img alt="Modern Devotion" class="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(232,131,58,0.5)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUDvz-8DEGQn-4f1rKthGrCsdPvEZEBWpZyWyWQ6HGftFlccvIO8K5bNAtXYh0F-hjcm5b30GgQBwy50_tV76niCvrfymg0efV-NgWb0_q3AKtFi7yvpCaXsEJUAivRhGhBnUPBDgcDyx6GAeVC32nwe7BWT4o0u0AX4ZAkGANvt8N0Rcn6I6sYYIFtE2bWw4zI3RNHJNIhCm1U5NQ39UlMZ6d4pC-mrmPxU1VJZTdh_KykKMOxruWiB99Sr_9SoUhWDqB96Z-mrA"/>
+</div>
+<h3 class="font-headline-sm text-gold-pure mb-4">Absolute Clarity</h3>
+<p class="font-body-md text-on-surface-variant">A seven-stage modern filtration process that removes physical impurities without disturbing the sacred structure.</p>
+</div>
+</div>
+</section>
+<!-- Product Showcase (Manifesto Section with Rich Dark/Saffron Glow) -->
+<section class="bg-bg-void py-24 relative overflow-hidden border-y border-saffron-sacred/10">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(232,131,58,0.05),_transparent_75%)] pointer-events-none"></div>
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-page text-center reveal-on-scroll visible">
+<span class="text-saffron-sacred font-label-caps uppercase tracking-widest mb-6 block">The Manifesto</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-gold-pure mb-8 text-glow">Purity is not a State, but a Process</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+            "In every drop of Shuddodaka, we preserve the silence of the earth and the vibration of the sky. We believe that what is offered to the Divine must reflect the Divine's own clarity."
+        </p>
+</div>
+</section>
+<!-- Ritual Guide Section -->
+<section class="relative py-section-gap px-margin-mobile md:px-margin-page overflow-hidden" id="ritual-of-use" style="background-image: linear-gradient(to bottom, #050202, transparent, #0a0706), url('https://lh3.googleusercontent.com/aida/ADBb0uiMq6hnaKIHPVakTuyy-QXSvo8hZtK2vm0BmH1e5ZIRlammlYbRFa282M44fK1zmLVi69P2JO1Kqt2QkT8JUxLPl5gjZeZC7qi5D-x0-g6cVzPDkYBI3fAcXstX-fw2dz2N9DQaA1GT5GrYjxxSD9HyW3pnTnpw5ExHzXCTlowsM0-MLDMQknTo0RTweEP_b0Axx5G_kwmeh9-5I9HJ5g7VdrSZgSHsf1FNj1jD6xSqzPkJzG06V5LlGvQ'); background-size: cover; background-position: center; background-attachment: fixed;">
+<div class="max-w-[1440px] mx-auto relative z-10">
+<div class="text-center mb-16 reveal-on-scroll visible">
+<h2 class="font-display-lg-mobile md:font-display-lg text-gold-pure mb-4 uppercase tracking-wider">The Ritual of Use</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Follow the sacred sequence to unlock the full spiritual frequency of Shuddodaka.</p>
+</div>
+<div class="max-w-4xl mx-auto mb-20 reveal-on-scroll visible">
+<!-- Video/Hero Break with subtle warm rim light -->
+<div id="video-wrapper" class="aspect-video bg-bg-void/60 backdrop-blur-md border border-saffron-sacred/20 rounded-sm relative group cursor-pointer flex items-center justify-center overflow-hidden shadow-[0_0_50px_rgba(232,131,58,0.1)]">
+<video id="promo-video" class="w-full h-full object-cover opacity-90 transition-opacity duration-500" preload="metadata">
+<source src="/video/SHUDDHODAKA prom.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<div id="video-overlay" class="absolute inset-0 bg-bg-void/40 backdrop-blur-sm flex items-center justify-center transition-all duration-500 z-10">
+<div class="absolute inset-0 bg-gradient-to-tr from-saffron-sacred/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="w-20 h-20 md:w-24 md:h-24 bg-saffron-sacred/10 border border-saffron-sacred/40 rounded-full flex items-center justify-center text-saffron-sacred group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(232,131,58,0.3)] z-20">
+<span class="material-symbols-outlined" style="font-size: 40px; font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="reveal-on-scroll bg-surface-container-high/30 p-8 rounded-sm border-l border-saffron-sacred/20 visible">
+<h4 class="font-headline-sm text-white-pure mb-4">Preparation</h4>
+<p class="font-body-md text-on-surface-variant">Center your mind and cleanse your hands. Create a space of absolute stillness before unsealing the vessel.</p>
+</div>
+<div class="reveal-on-scroll bg-surface-container-high/30 p-8 rounded-sm border-l border-saffron-sacred/20 visible" style="transition-delay: 150ms;">
+<h4 class="font-headline-sm text-white-pure mb-4">Invocation</h4>
+<p class="font-body-md text-on-surface-variant">Hold the Shuddodaka at heart center. Silently set your purest intention or recite your chosen mantra.</p>
+</div>
+<div class="reveal-on-scroll bg-surface-container-high/30 p-8 rounded-sm border-l border-saffron-sacred/20 visible" style="transition-delay: 300ms;">
+<h4 class="font-headline-sm text-white-pure mb-4">Purification</h4>
+<p class="font-body-md text-on-surface-variant">Disperse the sacred water across your space, tools, or self, visualizing a cascade of radiant clarity.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Practice Guide -->
+<section class="py-section-gap px-margin-mobile md:px-margin-page max-w-[1440px] mx-auto bg-bg-void" id="ritual">
+<div class="mb-20 text-center reveal-on-scroll visible">
+<span class="text-saffron-sacred font-label-caps uppercase tracking-widest mb-4 block">The Practice</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-white-pure">Elevate Your Ritual</h2>
+</div>
+<div class="space-y-32">
+<!-- Step 1 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal-on-scroll visible">
+<div class="order-2 md:order-1 relative">
+<div class="absolute -left-8 md:-left-16 -top-16 text-[150px] font-headline-md text-surface-container-highest opacity-20 z-0 select-none">01</div>
+<div class="relative z-10 pl-0 md:pl-12">
+<h3 class="font-headline-sm text-gold-pure mb-4">The Cleansing</h3>
+<p class="font-body-lg text-on-surface-variant">Begin by washing the hands. A single pour of Shuddodaka purifies the physical vessel before approaching the altar.</p>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="aspect-[16/9] bg-surface-container rounded-sm overflow-hidden border border-saffron-sacred/10 shadow-xl group">
+<img alt="Ritual Cleansing" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90" src="ritual-cleansing.png"/>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center reveal-on-scroll visible">
+<div class="order-1">
+<div class="aspect-[16/9] bg-surface-container rounded-sm overflow-hidden border border-saffron-sacred/10 shadow-xl">
+<img alt="Lighting the Flame" class="w-full h-full object-cover opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnzo6byFf0HlXQ2OMbbPFLyOIK0TiMYoLjOXEoGpOFCw-gwxMKZbZBCvS5r7kuCwR5BXgdQawE7qnXYIeyyqwJv3rgNzk3Sy6qRT3bhSrlBTrWrItCeEZtD3Q32NDfD6RQHt6kQByCy6D5ers72JbB6NJaCOHwIauqptPisXoSkMlWaB0Qh5vcICibT4OKSTVAIcCVKn_3eG3KYowCrIzeDtwsVR9z04f6POY32c2fTPshOg2Iuu3CEuYJ70asjk6Sd0H5SQdNIlY"/>
+</div>
+</div>
+<div class="order-2 relative">
+<div class="absolute -right-8 md:-right-16 -top-16 text-[150px] font-headline-md text-surface-container-highest opacity-20 z-0 select-none text-right w-full">02</div>
+<div class="relative z-10 pr-0 md:pr-12 text-left md:text-right">
+<h3 class="font-headline-sm text-gold-pure mb-4">The Offering</h3>
+<p class="font-body-lg text-on-surface-variant">Present the water to the deity. Its absolute clarity mirrors the pure intentions of the devotee.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Component -->
+<footer class="bg-bg-void w-full pt-section-gap pb-8 border-t border-saffron-sacred/20 mt-32 relative">
+<!-- Subtle temple glow at footer -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-[radial-gradient(ellipse_at_top,_rgba(232,131,58,0.05),_transparent_70%)] pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-page max-w-[1440px] mx-auto relative z-10">
+<div class="col-span-1 md:col-span-2 mb-12 md:mb-0">
+<div class="font-headline-md text-headline-md text-gold-pure uppercase tracking-widest mb-6">Shuddodaka</div>
+<p class="font-body-md text-on-surface-variant max-w-sm mb-8">Crafted for the Divine. Bringing ancient purity to modern sanctuaries.</p>
+<form id="subscribe-form" class="flex border-b border-saffron-sacred/20 pb-2 max-w-sm group focus-within:border-saffron-sacred transition-colors">
+<input id="subscribe-email" class="bg-transparent border-none focus:ring-0 text-white-pure placeholder-on-surface-variant/50 w-full font-body-md px-0" placeholder="Join the Circle of the Pure" type="email" required/>
+<button class="text-saffron-sacred hover:text-gold-pure" type="submit">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<div id="subscribe-msg" class="text-xs mt-2 min-h-[16px] transition-all duration-300"></div>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-on-surface uppercase tracking-widest mb-6">Explore</h4>
+<ul class="space-y-4 font-body-md">
+<li class=""><a class="text-on-surface-variant hover:text-gold-shimmer underline-offset-4 hover:underline transition-opacity duration-300" href="#">The Source</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-gold-shimmer underline-offset-4 hover:underline transition-opacity duration-300" href="#">Ritual Guide</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-gold-shimmer underline-offset-4 hover:underline transition-opacity duration-300" href="#">Purity Lab</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-on-surface uppercase tracking-widest mb-6">Connect</h4>
+<ul class="space-y-4 font-body-md">
+<li class=""><a class="text-on-surface-variant hover:text-gold-shimmer underline-offset-4 hover:underline transition-opacity duration-300" href="#">Wholesale</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-gold-shimmer underline-offset-4 hover:underline transition-opacity duration-300" href="#">Contact</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-gold-shimmer underline-offset-4 hover:underline transition-opacity duration-300" href="#">Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-page max-w-[1440px] mx-auto mt-24 relative z-10">
+<div class="golden-thread mb-8 opacity-20"></div>
+<div class="text-center font-body-md text-on-surface-variant/50">
+            © 2024 Shuddodaka. All Rights Reserved. Crafted for the Divine.
+        </div>
+</div>
+</footer>
+<!-- Acquisition Modal -->
+<div id="acquire-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-bg-void/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-500">
+  <div class="sacred-glass max-w-md w-full p-8 relative border border-gold-pure/30">
+    <button id="close-modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-gold-pure transition-colors">
+      <span class="material-symbols-outlined" style="font-size: 24px;">close</span>
+    </button>
+    
+    <!-- Form Content -->
+    <div id="modal-form-content">
+      <h3 class="font-display-lg-mobile text-gold-pure mb-2 text-center text-glow uppercase tracking-widest">Acquire Shuddodaka</h3>
+      <p class="font-body-md text-on-surface-variant text-center mb-6">
+        Initiate the acquisition process. Our concierge will contact you during the next auspicious window.
+      </p>
+      
+      <form id="acquire-form" class="space-y-6">
+        <div>
+          <label class="block font-label-caps text-gold-pure mb-2 uppercase tracking-widest" for="acq-name">Your Name</label>
+          <input type="text" id="acq-name" required class="w-full bg-transparent border-b border-saffron-sacred/30 focus:border-saffron-sacred focus:ring-0 text-white-pure font-body-md py-2 px-0 transition-colors placeholder-on-surface-variant/30" placeholder="Seeker's Name"/>
+        </div>
+        
+        <div>
+          <label class="block font-label-caps text-gold-pure mb-2 uppercase tracking-widest" for="acq-email">Email Address</label>
+          <input type="email" id="acq-email" required class="w-full bg-transparent border-b border-saffron-sacred/30 focus:border-saffron-sacred focus:ring-0 text-white-pure font-body-md py-2 px-0 transition-colors placeholder-on-surface-variant/30" placeholder="vessel@domain.com"/>
+        </div>
+        
+        <div>
+          <label class="block font-label-caps text-gold-pure mb-2 uppercase tracking-widest" for="acq-quantity">Vessel Quantity (Sacred Count)</label>
+          <div class="relative">
+            <select id="acq-quantity" class="w-full bg-bg-deep border-b border-saffron-sacred/30 focus:border-saffron-sacred focus:ring-0 text-white-pure font-body-md py-2 px-0 transition-colors appearance-none cursor-pointer">
+              <option value="1" class="bg-bg-void text-on-surface">1 Vessel (Eka - Unity)</option>
+              <option value="3" class="bg-bg-void text-on-surface">3 Vessels (Trideva - Trinity)</option>
+              <option value="7" class="bg-bg-void text-on-surface" selected>7 Vessels (Saptarishi - Cosmos)</option>
+              <option value="12" class="bg-bg-void text-on-surface">12 Vessels (Aditya - Solar Cycle)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block font-label-caps text-gold-pure mb-2 uppercase tracking-widest" for="acq-intention">Intention / Message (Optional)</label>
+          <textarea id="acq-intention" rows="2" class="w-full bg-transparent border-b border-saffron-sacred/30 focus:border-saffron-sacred focus:ring-0 text-white-pure font-body-md py-2 px-0 transition-colors placeholder-on-surface-variant/30 resize-none" placeholder="Set your spiritual focus..."></textarea>
+        </div>
+        
+        <div id="acquire-error-message" class="text-error text-xs hidden"></div>
+
+        <button type="submit" class="w-full py-4 border border-gold-pure text-gold-pure font-label-caps uppercase tracking-widest hover:bg-gradient-to-r hover:from-gold-pure/20 hover:to-saffron-sacred/20 transition-all duration-500 rounded-sm bg-transparent">
+          Send Request
+        </button>
+      </form>
+    </div>
+    
+    <!-- Success Content -->
+    <div id="modal-success-content" class="hidden flex flex-col items-center text-center py-6">
+      <div class="w-20 h-20 border border-dashed border-gold-pure rounded-full flex items-center justify-center mb-6 animate-[spin_10s_linear_infinite] shadow-[0_0_20px_rgba(201,168,76,0.3)]">
+        <span class="material-symbols-outlined text-gold-pure" style="font-size: 36px;">spa</span>
+      </div>
+      <h3 class="font-display-lg-mobile text-gold-pure mb-4 uppercase tracking-widest text-glow">Alignment Achieved</h3>
+      <p class="font-body-lg text-white-pure mb-2">Request ID: <span id="success-order-id" class="font-semibold text-saffron-sacred">SD-XXXXX</span></p>
+      <p id="success-message-text" class="font-body-md text-on-surface-variant mb-8">
+        Your request for Shuddodaka has been received. Our concierge will contact you during the next auspicious window.
+      </p>
+      <button id="close-success-btn" class="px-8 py-3 border border-gold-pure text-gold-pure font-label-caps uppercase tracking-widest hover:bg-gradient-to-r hover:from-gold-pure/20 hover:to-saffron-sacred/20 transition-all duration-500 rounded-sm bg-transparent">
+        Return
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+    // Scroll Reveal
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Basic Particle Simulation using Canvas - Warm Golden Particles
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const container = document.getElementById('particles-js');
+    container.appendChild(canvas);
+
+    let particles = [];
+    const numParticles = 60;
+
+    function resize() {
+        canvas.width = container.clientWidth;
+        canvas.height = container.clientHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 1.5 + 0.5;
+            this.speedY = Math.random() * 0.4 + 0.1;
+            this.opacity = Math.random() * 0.4 + 0.1;
+            this.color = Math.random() > 0.5 ? '#C9A84C' : '#E8833A';
+        }
+        update() {
+            this.y -= this.speedY;
+            if (this.y < 0) {
+                this.y = canvas.height;
+                this.x = Math.random() * canvas.width;
+            }
+        }
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = this.opacity;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    class BurstParticle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 3 + 1.5;
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 8 + 3;
+            this.speedX = Math.cos(angle) * speed;
+            this.speedY = Math.sin(angle) * speed;
+            this.friction = 0.94;
+            this.opacity = 1.0;
+            this.fadeSpeed = Math.random() * 0.02 + 0.015;
+            this.color = Math.random() > 0.3 ? '#E8833A' : '#C9A84C';
+        }
+        update() {
+            this.speedX *= this.friction;
+            this.speedY *= this.friction;
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.opacity -= this.fadeSpeed;
+        }
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = Math.max(0, this.opacity);
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function triggerPurificationBurst(x, y) {
+        const burstX = x || (canvas.width / 2);
+        const burstY = y || (canvas.height / 2);
+        for (let i = 0; i < 100; i++) {
+            particles.push(new BurstParticle(burstX, burstY));
+        }
+    }
+
+    for (let i = 0; i < numParticles; i++) {
+        particles.push(new Particle());
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles = particles.filter(p => {
+            p.update();
+            p.draw();
+            return p.opacity > 0;
+        });
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Sleek glassmorphic notification function
+    function showNotification(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `fixed bottom-8 right-8 z-[100] sacred-glass p-6 max-w-sm border transition-all duration-500 transform translate-y-10 opacity-0 ${
+            type === 'error' ? 'border-error/40' : 'border-gold-pure/40'
+        }`;
+        
+        const title = type === 'error' ? 'Deviated State' : 'Sacred Purity';
+        const color = type === 'error' ? 'text-error' : 'text-gold-pure';
+        const icon = type === 'error' ? 'warning' : 'spa';
+        
+        toast.innerHTML = `
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined ${color}" style="font-size: 24px;">${icon}</span>
+                <div>
+                    <h4 class="font-label-caps uppercase tracking-widest ${color} mb-1">${title}</h4>
+                    <p class="font-body-md text-on-surface-variant">${message}</p>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(toast);
+        
+        // Trigger transition-in
+        setTimeout(() => {
+            toast.classList.remove('translate-y-10', 'opacity-0');
+        }, 50);
+        
+        // Trigger transition-out and cleanup
+        setTimeout(() => {
+            toast.classList.add('translate-y-10', 'opacity-0');
+            setTimeout(() => {
+                toast.remove();
+            }, 500);
+        }, 5000);
+    }
+
+    // Modal Control Logic
+    const acquireModal = document.getElementById('acquire-modal');
+    const modalFormContent = document.getElementById('modal-form-content');
+    const modalSuccessContent = document.getElementById('modal-success-content');
+    const acquireForm = document.getElementById('acquire-form');
+    
+    function openModal() {
+        acquireModal.classList.remove('opacity-0', 'pointer-events-none');
+        modalFormContent.classList.remove('hidden');
+        modalSuccessContent.classList.add('hidden');
+        acquireForm.reset();
+    }
+    
+    function closeModal() {
+        acquireModal.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    // Bind event listeners to open/close buttons
+    document.getElementById('nav-acquire-btn')?.addEventListener('click', openModal);
+    document.getElementById('close-modal')?.addEventListener('click', closeModal);
+    document.getElementById('close-success-btn')?.addEventListener('click', closeModal);
+
+    // Also support closing on click outside the container
+    acquireModal?.addEventListener('click', (e) => {
+        if (e.target === acquireModal) {
+            closeModal();
+        }
+    });
+
+    // "Purify Your Space" button click: trigger burst, then open modal
+    document.getElementById('hero-purify-btn')?.addEventListener('click', (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const clickX = rect.left + rect.width / 2;
+        const clickY = rect.top + rect.height / 2;
+        
+        triggerPurificationBurst(clickX, clickY);
+        showNotification('Initiating spatial purification...', 'success');
+        
+        setTimeout(() => {
+            openModal();
+        }, 1000);
+    });
+
+    // Handle Newsletter Signup
+    const subscribeForm = document.getElementById('subscribe-form');
+    const subscribeEmail = document.getElementById('subscribe-email');
+    const subscribeMsg = document.getElementById('subscribe-msg');
+
+    subscribeForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = subscribeEmail.value;
+        if (!email) return;
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const data = await response.json();
+
+            if (response.ok) {
+                showNotification(data.message, 'success');
+                subscribeEmail.value = '';
+                if (subscribeMsg) {
+                    subscribeMsg.className = 'text-xs mt-2 text-gold-pure min-h-[16px] transition-all duration-300';
+                    subscribeMsg.textContent = 'Enrolled successfully.';
+                }
+            } else {
+                showNotification(data.message, 'error');
+                if (subscribeMsg) {
+                    subscribeMsg.className = 'text-xs mt-2 text-error min-h-[16px] transition-all duration-300';
+                    subscribeMsg.textContent = data.message;
+                }
+            }
+        } catch (err) {
+            console.error('Subscription error:', err);
+            showNotification('Could not connect to the sacred repository.', 'error');
+            if (subscribeMsg) {
+                subscribeMsg.className = 'text-xs mt-2 text-error min-h-[16px] transition-all duration-300';
+                subscribeMsg.textContent = 'Connection error. Please try again.';
+            }
+        }
+    });
+
+    // Handle Acquisition booking submit
+    acquireForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('acq-name').value;
+        const email = document.getElementById('acq-email').value;
+        const quantity = document.getElementById('acq-quantity').value;
+        const intention = document.getElementById('acq-intention').value;
+        const errorMsg = document.getElementById('acquire-error-message');
+
+        if (errorMsg) errorMsg.classList.add('hidden');
+
+        try {
+            const response = await fetch('/api/acquire', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, quantity, intention })
+            });
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById('success-order-id').textContent = data.orderId;
+                document.getElementById('success-message-text').textContent = data.message;
+                modalFormContent.classList.add('hidden');
+                modalSuccessContent.classList.remove('hidden');
+                showNotification('Acquisition request aligned successfully!', 'success');
+            } else {
+                if (errorMsg) {
+                    errorMsg.textContent = data.message;
+                    errorMsg.classList.remove('hidden');
+                }
+                showNotification(data.message, 'error');
+            }
+        } catch (err) {
+            console.error('Acquisition error:', err);
+            if (errorMsg) {
+                errorMsg.textContent = 'Connection error. The alignment could not be registered.';
+                errorMsg.classList.remove('hidden');
+            }
+            showNotification('Could not connect to the sacred repository.', 'error');
+        }
+    });
+
+    // Video Player Logic
+    const videoWrapper = document.getElementById('video-wrapper');
+    const promoVideo = document.getElementById('promo-video');
+    const videoOverlay = document.getElementById('video-overlay');
+
+    if (videoWrapper && promoVideo && videoOverlay) {
+        videoWrapper.addEventListener('click', () => {
+            if (promoVideo.paused) {
+                promoVideo.play()
+                    .then(() => {
+                        promoVideo.controls = true;
+                        videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    })
+                    .catch(err => {
+                        console.error('Video play error:', err);
+                    });
+            } else {
+                promoVideo.focus();
+            }
+        });
+
+        promoVideo.addEventListener('pause', () => {
+            promoVideo.controls = false;
+            videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        promoVideo.addEventListener('ended', () => {
+            promoVideo.controls = false;
+            videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            promoVideo.load();
+        });
+    }
+
+    // Mystic Loader Logic
+    // Prevent scrolling while loading
+    document.body.style.overflow = 'hidden';
+
+    function hideLoader() {
+        const loader = document.getElementById('mystic-loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            loader.style.transform = 'scale(1.05)';
+            loader.style.pointerEvents = 'none';
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                loader.remove();
+            }, 1200);
+        }
+    }
+
+    window.addEventListener('load', hideLoader);
+    // Fallback: Force hide loader after 4.5 seconds if load event hasn't fired
+    setTimeout(hideLoader, 4500);
+</script>
+</body></html>
