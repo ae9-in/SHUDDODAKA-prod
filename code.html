@@ -189,11 +189,24 @@
             Acquire Now
         </button>
 <!-- Mobile Menu Toggle -->
-<button class="md:hidden text-gold-pure">
+<button id="mobile-menu-btn" class="md:hidden text-gold-pure">
 <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
 </button>
 </div>
 </nav>
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-bg-void/95 backdrop-blur-3xl flex flex-col items-center justify-center translate-x-full transition-transform duration-500 md:hidden">
+    <button id="close-mobile-menu" class="absolute top-6 right-6 text-gold-pure hover:text-white-pure transition-colors">
+        <span class="material-symbols-outlined" style="font-size: 32px;">close</span>
+    </button>
+    <div class="flex flex-col items-center gap-8 text-center">
+        <a class="mobile-link font-headline-sm uppercase text-gold-shimmer border-b border-gold-pure pb-1" href="#essence">Essence</a>
+        <a class="mobile-link font-headline-sm uppercase text-on-surface-variant hover:text-gold-pure transition-colors" href="#ritual">Ritual</a>
+        <a class="mobile-link font-headline-sm uppercase text-on-surface-variant hover:text-gold-pure transition-colors" href="#source">Source</a>
+        <a class="mobile-link font-headline-sm uppercase text-on-surface-variant hover:text-gold-pure transition-colors" href="#legacy">Legacy</a>
+        <button id="mobile-acquire-btn" class="mt-8 px-8 py-4 border border-gold-pure text-gold-pure font-label-caps uppercase tracking-widest rounded-sm hover:bg-gold-pure/10 transition-colors">Acquire Now</button>
+    </div>
+</div>
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-bg-void" style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uiMq6hnaKIHPVakTuyy-QXSvo8hZtK2vm0BmH1e5ZIRlammlYbRFa282M44fK1zmLVi69P2JO1Kqt2QkT8JUxLPl5gjZeZC7qi5D-x0-g6cVzPDkYBI3fAcXstX-fw2dz2N9DQaA1GT5GrYjxxSD9HyW3pnTnpw5ExHzXCTlowsM0-MLDMQknTo0RTweEP_b0Axx5G_kwmeh9-5I9HJ5g7VdrSZgSHsf1FNj1jD6xSqzPkJzG06V5LlGvQ'); background-size: cover; background-position: center; background-attachment: fixed;">
 <div class="absolute inset-0 bg-gradient-to-b from-bg-void/40 via-transparent to-bg-void/80 z-0"></div>
@@ -843,5 +856,38 @@ Your browser does not support the video tag.
     window.addEventListener('load', hideLoader);
     // Fallback: Force hide loader after 4.5 seconds if load event hasn't fired
     setTimeout(hideLoader, 4500);
+
+    // Mobile Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const mobileAcquireBtn = document.getElementById('mobile-acquire-btn');
+
+    if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+    }
+
+    if(closeMobileMenu && mobileMenu) {
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    }
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    });
+
+    if(mobileAcquireBtn) {
+        mobileAcquireBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            const modal = document.getElementById('acquire-modal');
+            if(modal) modal.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    }
 </script>
 </body></html>
