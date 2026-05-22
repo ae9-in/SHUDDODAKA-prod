@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Ensure data directory exists (gracefully catch read-only filesystem errors in cloud/serverless environments)
-const dataDir = path.join(__dirname, 'data');
+const dataDir = path.join(__dirname, '..', 'data');
 if (!fs.existsSync(dataDir)) {
   try {
     fs.mkdirSync(dataDir);
@@ -23,11 +23,11 @@ if (!fs.existsSync(dataDir)) {
 
 // Serve index.html as the root index page from public directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
 // Serve the public directory static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Health check endpoint
 app.get('/api/status', (req, res) => {
@@ -166,4 +166,3 @@ if (!process.env.VERCEL) {
 
 // Export Express app for Vercel serverless handler
 module.exports = app;
-
